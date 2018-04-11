@@ -31,40 +31,6 @@ $req->execute(array(
 	'commentaire' => $commentaire
 	));
 	
-/*
-// Récupération des 10 derniers messages
-$reponse = $bdd->query('SELECT lastName, message FROM livre_or ORDER BY ID DESC LIMIT 0, 10');
-// Affichage de chaque message (toutes les données sont protégées par htmlspecialchars)
-while ($donnees = $reponse->fetch())
-{
-	echo '<p><strong>' . htmlspecialchars($donnees['lastName']) . '</strong> : ' . htmlspecialchars($donnees['commentaire']) . '</p>';
-}
-
-$reponse->closeCursor();
-
-  
-echo 'Le message a bien été envoyé !' . '<br>';
-echo 'Nom: ' . $lastName . '<br>';
-echo 'Email: ' . $courriel . '<br>';
-echo 'commentaire: ' . $commentaire . '<br>';
-
-$reponse = $bdd->query('SELECT * FROM livreOr');
-
-// On affiche chaque entrée une à une
-while ($donnees = $reponse->fetch())
-{
-?>
-    <p>
-    <strong>Historique</strong> :<br />
-    Cette personne : <?php echo $donnees['lastName']; ?><br />
-    Couriel : <?php echo $donnees['courriel']; ?>  <br />
-    a laissé ce message: <?php echo $donnees['commentaire']; ?></em>
-   </p>
-<?php
-}
-
-$reponse->closeCursor(); // Termine le traitement de la requête
-*/
 
 
 // Redirection du visiteur vers la page du livre d'or
