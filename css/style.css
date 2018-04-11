@@ -189,11 +189,18 @@ article img {
     align-items: center;
     justify-content: center;
 }
+.border {
+    border: 2px solid rgb(253, 252, 252);
+    border-radius: 5px;
+    width: auto;
+    padding: 5px;
+}
 .aligne  {
     max-width: 50%;
 }
 .row {
     flex-direction: row;
+    margin-left: 10%;
 }
 .aligne input, textarea {
     margin-left: 40%;

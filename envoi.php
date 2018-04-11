@@ -36,32 +36,7 @@ $req->execute(array(
 	'courriel' => $courriel,
 	'commentaire' => $commentaire
     ));
- /*   
-echo 'Le message a bien été envoyé !' . '<br>';
-echo 'Nom: ' . $lastName . '<br>';
-echo 'Prenom: ' . $firstName . '<br>';
-echo 'Téléphone: ' . $telephone . '<br>';
-echo 'Adresse: ' . $adresse . '<br>';
-echo 'Email: ' . $courriel . '<br>';
-echo 'commentaire: ' . $commentaire . '<br>';
 
-$reponse = $bdd->query('SELECT * FROM formulaire');
-
-// On affiche chaque entrée une à une
-while ($donnees = $reponse->fetch())
-{
-?>
-    <p>
-    <strong>Historique</strong> :<br />
-    Cette personne : <?php echo $donnees['lastName']; ?>,  <?php echo $donnees['firstName']; ?> <br />
-    numero: <?php echo $donnees['telephone']; ?> <br/> Adresse: <?php echo $donnees['adresse']; ?> <br/> Couriel : <?php echo $donnees['courriel']; ?>  <br />
-    a laissé ce message: <?php echo $donnees['commentaire']; ?></em>
-   </p>
-<?php
-}
-
-$reponse->closeCursor(); // Termine le traitement de la requête
-*/
 header('Location: reservation.html');
 ?>
 
