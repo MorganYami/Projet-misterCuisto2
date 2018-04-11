@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function afficheMenu(obj){
+        
+        var idMenu     = obj.id;
+        var idSousMenu = 'sous' + idMenu;
+        var sousMenu   = document.getElementById(idSousMenu);
+        
+        /*****************************************************/
+        /**	si le sous-menu correspondant au menu cliqué    **/
+        /** est caché alors on l'affiche, sinon on le cache **/
+        /*****************************************************/
+        if(sousMenu.style.display == "none"){
+            sousMenu.style.display = "block";
+        }
+        else{
+            sousMenu.style.display = "none";
+        }
+        
+    }   
+    </script>
+</head>
+
+<body id="accueil">
+    <!--la barre de navigation -->
+    <nav id="menu">
+        <a href="accueil.html">Accueil</a>
+        <a href="platdujour.html">Plat du jour</a>
+        <a href="lacarte.html">La Carte</a>
+        <a href="reservation.html">Nous contacter</a>
+        <a href="livredor.html">Livre d'or</a> 
+    </nav>
+    
+
+    <div class="menu" id="menu3" onclick="afficheMenu(this)">
+            <img src="images/iconmenu.png" alt=" " />
+    </div>
+    <div id="sousmenu3" style="display:none">
+        <div class="sousmenu">
+            <a href="accueil.html">Accueil</a>
+        </div>
+        <div class="sousmenu">
+            <a href="platdujour.html">Plat du jour</a>
+        </div>
+        <div class="sousmenu">
+            <a href="lacarte.html">La Carte</a>
+        </div>
+        <div class="sousmenu">
+            <a href="reservation.html">Nous contacter</a>
+        </div>
+        <div class="sousmenu">
+            <a href="livredor.html">Livre d'or</a>
+        </div>
+    </div>
+
+    <!-- L'entête du site avec le logo -->
+    <header>
+        <a href="accueil.html" title="Revenir à l'accueil de Mister Cuisto"><img src="images/logo3.png" /></a>
+    </header>
+    <!-- La page avec le contenu -->
+    <main>
+        <div>
+            <div>
+                <h2 class="titre1">Carte des plats et menus</h2>
+                <h2 class="center">Nos sp&eacute;cialit&eacute;s</h2>
+                <div class="center" >
+                        <p>Entrées</p>
+                        <ul>
+                            <li>
+                                Ravioles de langoustines - Sauce au Jurançon et basilic
+                                    - <span>22 €</span>
+                            </li>
+                            <li>
+                                Escalope de foie frais façon Michodière au citron et filament de citron confit
+                                    - <span>26 €</span>
+                            </li>
+                            <li>
+                                Petits poivrons doux de Piquillos farcis à la morue dans leur coulis de poivrons et tomates
+                                    - <span>14 €</span>
+                            </li>
+                            <li>
+                                Salade de pleurotes et gésiers d'oie confits en vinaigrette chaude
+                                    - <span>14 €</span>
+                            </li>
+                        </ul>
+                        <p>Viandes</p>
+                        <ul>
+                            <li>
+                                Tournedos rossini - Sauce Périgourdine
+                                    - <span>31 €</span>
+                            </li>
+                            <li>
+                                Éventail de magret de canard - Sauce au Calvados et pommes fruit caramélisées
+                                    - <span>22 €</span>
+                            </li>
+                        </ul>
+                        <p>Poissons</p>
+                        <ul>
+                            <li>
+                                Fricassée de sole - Sauce à l'orange et Cognac
+                                    - <span>26 €</span>
+                            </li>
+                            <li>
+                                Pavé de merlu rôti à l'ail
+                                    - <span>22 €</span>
+                            </li>
+                        </ul>
+                        <p>Desserts</p>
+                        <ul>
+                            <li>
+                               Assiette de macarons garnis sur lit de crème anglaise et zeste confit d'orange
+                                - <span>8,50 €</span>
+                            </li>
+                            <li>
+                                Crêpe Michodière flambée avec un beurre suzette au rhum et Grand-Marnier
+                                    - <span>9,50 €</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    
+                    </div>
+            
+                    <div class="centrer" >
+                
+                        <h2 class="center">Menu découverte</h2>
+                        <div class="center" >
+                                    Entrée, Plat, Dessert
+                                         : <span>29,80 €</span> <br/><br/>
+                                            <b>Entr&eacute;es</b><br />
+                        Salade de pleurotes et g&eacute;siers d&#39;oie confits en vinaigrette chaude<br />
+                        Petits poivrons doux de Piquillos farcis &agrave; la morue dans leur coulis de poivrons et tomates<br />
+                        Saumon &agrave; l&#39;aneth marin&eacute; maison<br />
+                        <br />
+                        <b>Plats </b><br />
+                        &Eacute;ventail de magret de canard et sa sauce au poivre vert et Cognac<br />
+                        Pav&eacute; de merlu r&ocirc;ti &agrave; l&#39;ail<br />
+                        Entrec&ocirc;te grill&eacute; et sa sauce marchand de vin<br />
+                        <br />
+                        <b>Dessert</b><br />
+                        Ile flottante &agrave; la vanille naturelle<br />
+                        P&acirc;tisserie du jour<br />
+                        Mousse au chocolat<br />
+                        Glace ou sorbet
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    <div class="center" >
+            
+                        <h2>Formule du jour</h2>
+                        
+                            <div>
+                                    Le midi selon le marché
+                                         : <span>16 €</span>
+                                            Entr&eacute;e + Plat + Dessert
+                            </div>
+                        
+                        
+                    </div>
+                </div>
+        </div>
+
+    </main>         
+<!-- le pied de page avec un menu -->
+    <footer>
+        <nav>
+            <a href="#" title="Mentions légales">Mentions légales</a>
+            <a href="#" title="Contacts &amp réservations">Contact</a>
+                    
+        </nav>
+    </footer>
+            
+</body>
+        
+</html>  
+        
+        
+        
+        
+<!-- code d'origine par Gérald ABBADIE -->

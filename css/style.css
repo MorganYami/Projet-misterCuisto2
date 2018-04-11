@@ -1,0 +1,273 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(32, 31, 31);
+    font-family: 'Inconsolata', monospace;
+}
+
+/* Présentation du menu */
+a {
+    color: rgb(177, 6, 6);
+    text-decoration: none;
+    display: block;
+    transition: all .3s ease-in-out;
+}
+
+a:hover {
+    color: rgb(219, 6, 6);
+}
+
+nav {
+    margin: 20px;
+    display: flex;
+    position: absolute;
+    right: 0;
+    border-bottom: thin solid #666;
+    padding-bottom: 20px;
+}
+
+nav a {
+    padding: 6px 20px;
+    /* Donnons un peu d'espace au texte */
+    font-size: 24px;
+    color: rgb(201, 4, 4);
+    transition: all .3s ease-in-out;
+    /* Animation pour les événements de souris... C'est plus joli */
+    text-decoration: none;
+    font-family: 'Dancing Script', cursive;
+    /* Ca, c'est une font de google style écrit à la main */
+}
+
+nav a:hover {
+    background-color: rgb(196, 7, 7);
+    color: #000;
+}
+
+
+/*menu déroullant cliquable*/
+nav img, .menu {
+    width: 10px;
+    height: 10px;
+    display: none;
+    
+}
+
+
+/* Code pour tout le site Internet */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Dancing Script', cursive;
+}
+
+h1 {
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+header img {
+    width: 25%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+footer {
+    margin: 40px 0;
+    font-size: 0.8em;
+    width: 100%;
+    display: flex;
+    background-color: rgb(145, 137, 137);
+}
+
+footer nav {
+    position: relative;
+    margin: auto;
+}
+.center {
+    text-align: center;
+}
+.titre1 {
+    color: rgba(219, 12, 12, 0.979);
+    font-size: 1.5em;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.gras {
+    font-weight: bold;
+}
+ul, li {
+    list-style: none;
+}
+#platdujour2 {
+    display: block;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    }
+#middle article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* LA PAGE D'ACCUEIL */
+#platdujour {
+    overflow: hidden;
+    margin: auto;
+}
+
+#platdujour article a {
+    margin: 0;
+    padding: 0;
+    display: initial;
+}
+
+#platdujour article {
+    width: 80vw;
+}
+
+#platdujour article img {
+    float: left;
+    margin-right: 30px;
+    margin-left: 5px;
+    width: 50%;
+    height: auto;
+}
+
+#valeurs article {
+    margin: 20px 10px;
+    padding: 0px 20px 20px;
+    background: rgba(255, 255, 255, 1);
+    color: #000;
+    border: 6px double rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+#valeurs article:hover {
+    transform: scale(1.05);
+}
+
+article {
+    float: left;
+}
+
+article img {
+    width: 50%;
+    height: auto;
+}
+
+#detail {
+    text-align: center;
+}
+/* mise en page formulaire contact*/
+#myForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.aligne  {
+    max-width: 50%;
+}
+.row {
+    flex-direction: row;
+}
+.aligne input, textarea {
+    margin-left: 40%;
+}
+input, textarea {
+	padding: 2px;
+	border: 1px solid #CCC;
+	border-radius: 2px;
+	outline: none; /* Retire les bordures appliquées par certains navigateurs (Chrome notamment) lors du focus des éléments <input> */
+}
+	
+input:focus, textarea:focus {
+	border-color: rgba(238, 216, 20, 0.918);
+	box-shadow: 0 0 8px rgb(255, 255, 255);
+}
+	
+.correct {
+	border-color: rgba(11, 204, 11, 0.945);
+}
+	
+.incorrect {
+	border-color: rgba(216, 9, 9, 0.925);
+}
+
+
+
+/* responsive accueil*/
+@media (max-width: 870px) {
+    .menu {
+        width: auto;
+        height: auto;
+        display: block;
+        float: right;
+    }
+    nav {
+        border: none;
+    }
+    #menu {
+        display: none;
+    }
+    article {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .titre1 {
+        text-align: left;
+    }
+    #pdj {
+        width: 80%;
+    }
+    #valeurs article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    article img {
+        width:90%;
+    }
+    .menu a{
+        display:block;
+    }
+    .sousmenu{
+        clear: both;
+        text-align: right;
+    }
+    .sousmenu a{
+        display:block;
+    }
+    .menu a:hover, .sousmenu a:hover, .menu a:active, .sousmenu a:active, .menu a:focus, .sousmenu a:focus{
+	background:#006DCC;
+}
+}
+
+
+
+
+/* code d'origine par Gérald ABBADIE */

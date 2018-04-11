@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function afficheMenu(obj){
+        
+        var idMenu     = obj.id;
+        var idSousMenu = 'sous' + idMenu;
+        var sousMenu   = document.getElementById(idSousMenu);
+        
+        /*****************************************************/
+        /**	si le sous-menu correspondant au menu cliqué    **/
+        /** est caché alors on l'affiche, sinon on le cache **/
+        /*****************************************************/
+        if(sousMenu.style.display == "none"){
+            sousMenu.style.display = "block";
+        }
+        else{
+            sousMenu.style.display = "none";
+        }
+        
+    }   
+    </script>
+</head>
+
+<body id="accueil">
+    <!--la barre de navigation -->
+    <nav id="menu">
+        <a href="accueil.html">Accueil</a>
+        <a href="platdujour.html">Plat du jour</a>
+        <a href="lacarte.html">La Carte</a>
+        <a href="reservation.html">Nous contacter</a>
+        <a href="livredor.html">Livre d'or</a> 
+    </nav>
+    
+
+    <div class="menu" id="menu3" onclick="afficheMenu(this)">
+            <img src="images/iconmenu.png" alt=" " />
+    </div>
+    <div id="sousmenu3" style="display:none">
+        <div class="sousmenu">
+            <a href="accueil.html">Accueil</a>
+        </div>
+        <div class="sousmenu">
+            <a href="platdujour.html">Plat du jour</a>
+        </div>
+        <div class="sousmenu">
+            <a href="lacarte.html">La Carte</a>
+        </div>
+        <div class="sousmenu">
+            <a href="reservation.html">Nous contacter</a>
+        </div>
+        <div class="sousmenu">
+            <a href="livredor.html">Livre d'or</a>
+        </div>
+    </div>
+
+    <!-- L'entête du site avec le logo -->
+    <header>
+        <a href="accueil.html" title="Revenir à l'accueil de Mister Cuisto"><img src="images/logo3.png" /></a>
+    </header>
+    <!-- La page avec le contenu -->
+    <main>
+
+        <div class="center" >
+                <h2>Formulaire de contact</h2>
+                <p>Vous souhaitez nous contacter? <br/> Vous voulez réserver? <br/> Ce formulaire est à votre disposition!</p>
+        </div>
+        <section id="myForm">
+                    <form action="envoi.php" method="post" name="formulaire" >
+                        <div class="aligne">
+                            <label class="form_col" for="lastName">Nom :</label>
+                            <input name="lastName" id="lastName" type="text" required />
+                            <br /><br />
+                        </div>
+                        <div class="aligne">
+                            <label class="form_col" for="firstName">Prénom :</label>
+                            <input name="firstName" id="firstName" type="text" required />
+                            <br /><br />
+                        </div>
+                        <div class="aligne">
+                            <label class="form_col" for="telephone">Téléphone :</label>
+                            <input name="telephone" id="telephone" type="tel" placeholder="0X.XX.XX.XX.XX"/>
+                            <br /><br />
+                        </div>
+                        <div class="aligne">
+                           <label class="form_col" for="adresse">Adresse: </label>
+                           <input name="adresse" id="adresse" type="text" />
+                           <br /><br />
+                        </div>
+                        <div class="aligne">
+                         <label class="form_col" for="courriel">Adresse mail:</label> 
+                            <input type="email" name="courriel" id="courriel" required placeholder="utilisateur@domaine.fr">
+                            <br/> <br/>
+                        </div>
+                        <div class="aligne">
+                            <label class="form_col" for="commentaire">Votre message:</label>
+                            <textarea rows="5" name="commentaire" required ></textarea>
+                        </div>
+                        <span class="form_col"></span>
+                        <div class="row">
+                            <input type="submit" value="Envoyer" />
+                            <input type="reset" value="Réinitialiser le formulaire" />
+                        </div>
+                    </form>
+                    <script type="text/javascript" src="js/script1.js"></script>    
+        </section>
+
+    </main>       
+        
+
+<!-- le pied de page avec un menu -->
+    <footer>
+        <nav>
+            <a href="#" title="Mentions légales">Mentions légales</a>
+            <a href="#" title="Contacts &amp réservations">Contact</a>
+                    
+        </nav>
+    </footer>
+            
+</body>
+        
+</html>  
+        
+        
+        
+        
+        <!-- code d'origine par Gérald ABBADIE -->
