@@ -37,6 +37,7 @@ $req->execute(array(
 	'commentaire' => $commentaire
     ));
 
+// Redirection du visiteur vers la page du formulaire
 header('Location: reservation.html');
 ?>
 
