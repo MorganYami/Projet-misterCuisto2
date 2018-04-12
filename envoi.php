@@ -38,7 +38,7 @@ $req->execute(array(
     ));
 
 // Redirection du visiteur vers la page du formulaire
-header('Location: reservation.html');
+header('Location: reservation2.html');
 ?>
 
 </body>

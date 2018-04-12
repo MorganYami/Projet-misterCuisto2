@@ -34,7 +34,7 @@ $req->execute(array(
 
 
 // Redirection du visiteur vers la page du livre d'or
-header('Location: livredor.html');
+header('Location: livredor2.html');
 
 ?>
 

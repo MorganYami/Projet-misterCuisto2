@@ -61,24 +61,40 @@
 
     <!-- L'entête du site avec le logo -->
     <header>
-        <a href="accueil.html" title="Revenir à l'accueil de Mister Cuisto"><img src="images/logo3.png" /> </a> 
+        <a href="accueil.html" title="Revenir à l'accueil de Mister Cuisto"><img src="images/logo3.png" /></a>
     </header>
     <!-- La page avec le contenu -->
     <main>
-             
-            <div class="center" >
-                    <h2>Livre d'Or</h2>
-                    <p>Dites-nous ce que vous avez aimé!</p>
-            </div>
-           
-        <section id="myForm" ><div  class="border">
-                <form action="livredorEnvoi.php" method="post" name="livreOr" >
+            
+        <div class="center" >
+                <h2>Formulaire de contact</h2>
+                <p>Vous souhaitez nous contacter? <br/> Vous voulez réserver? <br/> Ce formulaire est à votre disposition!</p>
+        </div>
+        <div class="center" >
+            <p class="gras"><span class="orange">|Votre message a bien été transmit|</span></p>
+        </div>
+        <section id="myForm"><div  class="border">
+                    <form action="envoi.php" method="post" name="formulaire" >
                         <div class="aligne">
                             <label class="form_col" for="lastName">Nom :</label>
-                            <input name="lastName" id="lastName" type="text"  />
+                            <input name="lastName" id="lastName" type="text" required />
                             <br /><br />
                         </div>
-                        
+                        <div class="aligne">
+                            <label class="form_col" for="firstName">Prénom :</label>
+                            <input name="firstName" id="firstName" type="text" required />
+                            <br /><br />
+                        </div>
+                        <div class="aligne">
+                            <label class="form_col" for="telephone">Téléphone :</label>
+                            <input name="telephone" id="telephone" type="tel" placeholder="0X.XX.XX.XX.XX"/>
+                            <br /><br />
+                        </div>
+                        <div class="aligne">
+                           <label class="form_col" for="adresse">Adresse: </label>
+                           <input name="adresse" id="adresse" type="text" />
+                           <br /><br />
+                        </div>
                         <div class="aligne">
                          <label class="form_col" for="courriel">Adresse mail:</label> 
                             <input type="email" name="courriel" id="courriel" required placeholder="utilisateur@domaine.fr">
@@ -89,29 +105,28 @@
                             <textarea rows="5" name="commentaire" required ></textarea>
                         </div>
                         <span class="form_col"></span>
-                        <div class="center">
+                        <div class="row">
                             <input type="submit" value="Envoyer" />
-                            
+                            <input type="reset" value="Réinitialiser le formulaire" />
                         </div>
                     </form></div>
+                    <script type="text/javascript" src="js/script1.js"></script>    
         </section>
-        
-    </main>
+   
 
+    </main>       
+        
 
 <!-- le pied de page avec un menu -->
-<footer>
-    <nav>
-        <a href="#" title="Mentions légales">Mentions légales</a>
-        <a href="#" title="Contacts &amp réservations">Contact</a>
-                
-    </nav>
-</footer>
-        
+    <footer>
+        <nav>
+            <a href="#" title="Mentions légales">Mentions légales</a>
+            <a href="#" title="Contacts &amp réservations">Contact</a>
+                    
+        </nav>
+    </footer>
+            
 </body>
-    
+        
 </html>  
-    
-    
-    
-    
+        

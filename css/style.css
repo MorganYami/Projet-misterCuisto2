@@ -9,7 +9,9 @@ body {
     background-color: rgb(32, 31, 31);
     font-family: 'Inconsolata', monospace;
 }
-
+.orange {
+    color: orange;
+}
 /* Présentation du menu */
 a {
     color: rgb(177, 6, 6);
@@ -114,6 +116,7 @@ footer nav {
     text-decoration: underline;
     text-align: center;
 }
+
 
 .gras {
     font-weight: bold;
