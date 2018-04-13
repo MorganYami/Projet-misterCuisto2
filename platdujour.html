@@ -6,6 +6,67 @@
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" />
     <title>Plat du Jour - Mister Cuisto</title>
+    <!-- lien vers le script contenant la fonction getXMLHttpRequest-->
+    <script type="text/javascript" src="oXHR.js"></script>
+    <script type="text/javascript">
+        // pointeur sur la position de l'article courant dans le catalogue
+        var index = 0;
+        // initialisation du catalogue
+        var catalogue = [];
+
+        function executerRequete(callback) {
+            // on vérifie si le catalogue a déjà été chargé pour n'exécuter la requête AJAX
+            // qu'une seule fois
+            if (catalogue.length === 0) {
+                // on récupère un objet XMLHttpRequest
+                var xhr = getXMLHttpRequest();
+                // on réagit à l'événement onreadystatechange
+                xhr.onreadystatechange = function() {
+                    // test du statut de retour de la requête AJAX
+                    if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+                        // on désérialise le catalogue et on le sauvegarde dans une variable
+                        catalogue = JSON.parse(xhr.responseText);
+                        // on lance la fonction de callback avec le catalogue récupéré
+                        callback();
+                    }
+                }
+                // la requête AJAX : lecture de data.json
+                xhr.open("GET", "data.json", true);
+                xhr.send();
+            } else {
+                // on lance la fonction de callback avec le catalogue déjà récupéré précédemment
+                callback();
+            }
+        }
+        function lireSuivant() {
+                // connaitre le nombre d'articles dans le catalogue
+                var longueur = catalogue.length;
+                // manipulation du DOM pour afficher les caractéristiques de l'article
+                document.getElementById("part1").innerHTML = catalogue[index].part1;
+                document.getElementById("part2").innerHTML = catalogue[index].part2;
+                document.getElementById("part3").innerHTML = catalogue[index].part3;
+                document.getElementById("part4").innerHTML = catalogue[index].part4;
+                document.getElementById("part5").innerHTML = catalogue[index].part5;
+                if (index < longueur - 1) {
+                    index++;
+                }
+            }
+            
+            function lirePrecedent() {
+                document.getElementById("part1").innerHTML = catalogue[index].part1;
+                document.getElementById("part2").innerHTML = catalogue[index].part2;
+                document.getElementById("part3").innerHTML = catalogue[index].part3;
+                document.getElementById("part4").innerHTML = catalogue[index].part4;
+                document.getElementById("part5").innerHTML = catalogue[index].part5;
+                if (index > 0) {
+                    index--;
+                }
+            }
+
+            // on initialise la lecture au premier élément
+            executerRequete(lireSuivant);
+        
+    </script>
     <script type="text/javascript">
         function afficheMenu(obj){
         
@@ -24,7 +85,8 @@
             sousMenu.style.display = "none";
         }
         
-    }   
+    } 
+      
     </script>
 </head>
 
@@ -84,18 +146,19 @@
                         <li>Une tasse de café moulu</li>
                     </ul>
                     <br/>
-                    <p>
+                    <p name="données">
                         <span class="gras">Procédure:</span> <br/>
-                        Donec dapibus, velit nec dapibus pretium, lectus eros gravida nulla, a aliquam risus elit ut erat. Duis nec enim a magna porttitor egestas. Nulla non enim nec enim placerat vehicula ut accumsan ex. Praesent aliquam ipsum eget arcu ornare, id lacinia felis fermentum. Nullam sit amet lectus lacus. Fusce ut iaculis ex. Morbi orci sapien, laoreet et sem suscipit, sagittis hendrerit diam.<br/> Mauris pharetra sem at risus cursus venenatis. Quisque accumsan, purus sed tristique dictum, felis libero efficitur leo, sed semper nisl sem nec tellus. Ut iaculis augue nec leo cursus gravida. Donec laoreet risus non finibus consectetur. Donec vitae ligula faucibus, faucibus metus sed, pharetra leo. Praesent venenatis pretium lorem vitae ultricies. Aenean at purus pretium, elementum lacus eget, commodo velit. Phasellus malesuada nisl in diam egestas vestibulum. Vivamus ac tellus quis nibh egestas maximus.
+                        <label id="part1"></label>
                         <br/>
-                        Quisque sit amet mattis ante. Nunc scelerisque sollicitudin sodales. Ut pellentesque turpis eu tincidunt sagittis. In lacinia dignissim lorem id commodo. Cras vehicula vehicula dolor a vestibulum. Vivamus congue vestibulum turpis, nec fermentum ligula efficitur non. Sed facilisis, ipsum eu gravida efficitur, nisl dui convallis mauris, at aliquam turpis nibh sit amet felis.<br/> In consequat in turpis a sodales.
+                        <label id="part2"></label>
                         <br/>
-                        Sed libero enim, pulvinar nec mi et, ultrices efficitur ligula. Nunc congue porta massa, nec elementum lectus. Etiam imperdiet lacus turpis. Curabitur nec ornare turpis. Curabitur pharetra ultricies ullamcorper. Sed eu condimentum felis. Duis nulla nibh, tristique vel nibh a, egestas malesuada mi. Aenean felis diam, tempor et eros sed, efficitur tincidunt dolor.<br/> Donec elementum semper lectus non laoreet. Nam magna est, sollicitudin vel aliquet sed, interdum ac libero.
+                        <label id="part3"></label>
                         <br/>
-                        Nulla sit amet nibh id dolor sagittis fringilla. Pellentesque sit amet pellentesque nulla, ac imperdiet purus. Praesent metus turpis, sollicitudin sit amet orci eu, placerat tempus sem. In vel posuere urna. Nam sapien orci, tincidunt sed elementum sed, congue eu nisi. Vestibulum euismod a elit id hendrerit. Vivamus consequat volutpat sapien, nec euismod justo consectetur a.<br/> Donec quis diam eget ante placerat auctor vitae in urna. Donec mollis lectus in leo commodo sollicitudin. Duis nulla erat, volutpat vel erat tincidunt, consectetur accumsan lacus.
+                        <label id="part4"></label>
                         <br/>
-                        Suspendisse et consequat justo. Vivamus hendrerit faucibus dui, non venenatis ipsum consequat nec. In quis urna maximus, malesuada urna quis, molestie nunc. Pellentesque et faucibus arcu. Suspendisse id nulla pulvinar, ullamcorper magna vel, vestibulum libero. Nam a efficitur tellus. Donec id suscipit dui, vitae sagittis magna.
-                    </p>
+                        <label id="part5"></label>
+                        <br/>
+                        </p>
                     <p class="gras"> <br/> <br/>Prix du plat: 14,56€</p>
                 </div>
             </article>
